@@ -1,6 +1,5 @@
 package com.tea.grpc;
 
-import static io.grpc.MethodDescriptor.*;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
@@ -31,8 +30,8 @@ public class TeaWeedDetectGrpc {
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<com.tea.grpc.TeaWeeds.DetectRequest,
       com.tea.grpc.TeaWeeds.DetectReply> METHOD_CLASSIFIER =
-      create(
-          MethodType.UNARY,
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
               "TeaWeedDetect", "classifier"),
           io.grpc.protobuf.ProtoUtils.marshaller(com.tea.grpc.TeaWeeds.DetectRequest.getDefaultInstance()),

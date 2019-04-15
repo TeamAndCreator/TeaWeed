@@ -12,16 +12,16 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "teaWeed")
+@RequestMapping(value = "test")
 public class TeaWeedController {
 
     @Resource
     GrpcClientService grpcClientService;
 
-    @PostMapping(value = "test")
-    public Result test(MultipartFile file){
+    @PostMapping(value = "tea_weed")
+    public Result tea_weed(MultipartFile file){
         try {
-            Map<String,Float> results = grpcClientService.classifier(file);
+            Map<String,Float> results = grpcClientService.tea_weed(file);
             return ResultUtil.success(results);
         }catch (Exception e){
             e.printStackTrace();
@@ -29,6 +29,15 @@ public class TeaWeedController {
         }
     }
 
-
+    @PostMapping(value = "bamboo")
+    public Result bamboo(MultipartFile file){
+        try {
+            Map<String,Float> results = grpcClientService.bamboo(file);
+            return ResultUtil.success(results);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+        }
+    }
 
 }

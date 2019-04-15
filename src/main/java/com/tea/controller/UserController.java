@@ -4,6 +4,7 @@ import com.tea.entity.Result;
 import com.tea.entity.User;
 import com.tea.service.UserService;
 import com.tea.util.ResultUtil;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +34,9 @@ public class UserController {
         try {
             userService.save(user);
             return ResultUtil.success();
+        }catch (DataIntegrityViolationException e){
+            e.printStackTrace();
+            return ResultUtil.error(500,"账号已存在");
         }catch (Exception e){
             e.printStackTrace();
             return ResultUtil.error(500,e.getMessage());

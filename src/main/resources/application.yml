@@ -1,11 +1,18 @@
 
 grpc:
   client:
-    local-grpc-server:
+    tea_weed_server:
       host:
       - ${LOCAL-GRPC-HOST:127.0.0.1}
       port:
-      - 6008
+      - 6007
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+    bamboo_server:
+      host:
+      - ${LOCAL-GRPC-HOST:127.0.0.1}
+      port:
+      - 6006
       enableKeepAlive: true
       keepAliveWithoutCalls: true
 ---

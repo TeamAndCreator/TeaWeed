@@ -19,10 +19,21 @@ import static com.tea.util.ImageToRgb.getMatrixRGB;
 @Service
 public class GrpcClientService {
 
-    @GrpcClient("local-grpc-server")
-    private Channel serverChannel;
+    @GrpcClient("tea_weed_server")
+    private Channel tea_weed_server;
 
-    public Map<String,Float> classifier(MultipartFile file) throws IOException {
+    @GrpcClient("bamboo_server")
+    private Channel bamboo_server;
+
+    public Map<String,Float> tea_weed(MultipartFile file) throws IOException {
+        return getStringFloatMap(file, tea_weed_server);
+    }
+
+    public Map<String,Float> bamboo(MultipartFile file) throws IOException {
+        return getStringFloatMap(file, bamboo_server);
+    }
+
+    private Map<String, Float> getStringFloatMap(MultipartFile file, Channel serverChannel) throws IOException {
         BufferedImage sourceImg =ImageIO.read(file.getInputStream());
         byte[] bytes=getMatrixRGB(sourceImg);
         TeaWeedDetectGrpc.TeaWeedDetectBlockingStub stub= TeaWeedDetectGrpc.newBlockingStub(serverChannel);

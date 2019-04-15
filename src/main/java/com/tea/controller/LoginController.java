@@ -4,12 +4,12 @@ import com.tea.entity.Result;
 import com.tea.entity.User;
 import com.tea.service.UserService;
 import com.tea.util.ResultUtil;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-@Controller
+@RestController
 public class LoginController {
 
     @Resource
@@ -24,7 +24,7 @@ public class LoginController {
             else if (code == 0)
                 return ResultUtil.error(0,"账号错误");
             else
-                return ResultUtil.success();
+                return ResultUtil.success(1,"登录成功",null);
         }catch (Exception e){
             e.printStackTrace();
             return ResultUtil.error(500,e.getMessage());
