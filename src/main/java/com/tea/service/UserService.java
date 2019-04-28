@@ -3,6 +3,7 @@ package com.tea.service;
 
 import com.tea.entity.User;
 import com.tea.repository.UserRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,16 +25,9 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public Integer login(User user) {
-        User user1 = userRepository.findByPhoneNumber(user.getPhoneNumber());
-        if (user1 != null) {
-            String password_truth =user1.getPassword();
-            if (password_truth.equals(user.getPassword()))
-                return 1;
-            else
-                return 2;
-        }else {
-            return 0;
-        }
+
+//    @Cacheable(value = "cache01",unless="#result == null",key = "#p0")
+    public User findByPhoneNumber(String phoneNumber){
+        return userRepository.findByPhoneNumber(phoneNumber);
     }
 }

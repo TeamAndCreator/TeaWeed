@@ -2,6 +2,7 @@ package com.tea.entity;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -24,6 +25,9 @@ public class User {
 
     /*是否激活 0.未激活 1.激活*/
     private Integer active;
+
+    @ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER)
+    private Set<Role> roles;
 
     public Integer getId() {
         return id;
@@ -65,6 +69,14 @@ public class User {
         this.active = active;
     }
 
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -73,6 +85,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", createTime='" + createTime + '\'' +
                 ", active=" + active +
+                ", roles=" + roles +
                 '}';
     }
 }

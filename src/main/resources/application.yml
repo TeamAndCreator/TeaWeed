@@ -1,4 +1,7 @@
-
+#server:
+#  port:
+#    7808
+#---
 grpc:
   client:
     tea_weed_server:
@@ -52,4 +55,21 @@ spring :
         physical-strategy : org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
     database-platform : org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view : true
+    properties :
+          hibernate:
+            enable_lazy_load_no_trans: true
 #spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
+---
+spring:
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-idle: 50
+        min-idle: 0
+        max-active: 50
+        max-wait: -1ms
+    timeout: 5000
