@@ -73,3 +73,6 @@ spring:
         max-active: 50
         max-wait: -1ms
     timeout: 5000
+---
+file:
+  root_path : E:/File/

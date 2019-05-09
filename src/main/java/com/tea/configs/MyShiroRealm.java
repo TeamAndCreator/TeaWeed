@@ -23,7 +23,6 @@ public class MyShiroRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         String phoneNumber = (String) principals.getPrimaryPrincipal();
-        System.out.println(phoneNumber);
         User user=userService.findByPhoneNumber(phoneNumber);
         for (Role role : user.getRoles()) {
             authorizationInfo.addRole(role.getRoleName());

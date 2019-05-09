@@ -6,6 +6,7 @@ import com.tea.entity.Role;
 import com.tea.service.PermissionService;
 import com.tea.service.RoleService;
 import com.tea.util.ResultUtil;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ public class RoleController {
     private PermissionService permissionService;
 
     @PostMapping(value = "save")
+    @RequiresRoles(value = "admin")
     public Result save(Role role,List<Integer> id_list){
         try {
             List<Permission> permissions = permissionService.findAll();
@@ -47,6 +49,7 @@ public class RoleController {
     }
 
     @GetMapping(value = "findAll")
+    @RequiresRoles(value = "admin")
     public Result findAll(){
         try {
             List<Role> roles = roleService.findAll();
