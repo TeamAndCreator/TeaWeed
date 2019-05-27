@@ -100,4 +100,30 @@ public class UserController {
             return ResultUtil.error(e.hashCode(),e.getMessage());
         }
     }
+    @GetMapping(value = "findAll")
+    public  Result findAll(){
+        try {
+            List users=userService.findAll();
+            return ResultUtil.success(users);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+        }
+    }
+    @DeleteMapping(value = "deleteById")
+
+    public  Result deleteById(Integer id){
+        try {
+            userService.deleteById(id);
+            return  ResultUtil.success();
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+
+        }
+
+
+    }
 }
