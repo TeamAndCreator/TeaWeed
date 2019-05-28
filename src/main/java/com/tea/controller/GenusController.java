@@ -69,8 +69,8 @@ public class GenusController {
     @GetMapping(value = "findById")
     public Result findById(Integer id){
         try {
-            genusService.findById(id);
-            return ResultUtil.success();
+            Genus genus = genusService.findById(id);
+            return ResultUtil.success(genus);
 
         }catch (Exception e){
             e.printStackTrace();

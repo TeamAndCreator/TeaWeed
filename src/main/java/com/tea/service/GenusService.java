@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class GenusService {
@@ -23,7 +25,14 @@ public class GenusService {
         genusRepository.deleteById(id);
 
     }
-    public void findById(Integer id){
-        genusRepository.findById(id);
+    public Genus findById(Integer id){
+        Optional<Genus> genus = genusRepository.findById(id);
+        if (genus.isPresent()){
+            return genus.get();
+        }else {
+            return null;
+        }
+
+
     }
 }

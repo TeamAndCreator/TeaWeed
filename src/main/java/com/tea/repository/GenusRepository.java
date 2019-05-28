@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface GenusRepository extends JpaRepository<Genus,Integer> , JpaSpecificationExecutor<Genus> {
 
+
 }
