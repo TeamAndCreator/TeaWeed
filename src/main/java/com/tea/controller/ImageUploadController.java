@@ -29,9 +29,9 @@ public class ImageUploadController {
 
     @PostMapping(value = "save")
     @RequiresPermissions(value = "picture_insert")
-    public Result save(MultipartFile multipartFile, String content,String type) {
+    public Result save(MultipartFile multipartFile, String test_result,String input_result,String type) {
         try {
-            file_databaseService.save(multipartFile, content,type);
+            file_databaseService.save(multipartFile, test_result,input_result,type);
             return ResultUtil.success();
         } catch (NullPointerException e) {
             e.printStackTrace();

@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -28,8 +29,8 @@ public class TeaWeedController {
     @RequiresRoles("customer")
     public Result tea_weed(MultipartFile file) {
         try {
-            Map<String, Float> results = grpcClientService.tea_weed(file);
-            Integer saved_file_database_id = file_databaseService.save(file, results.toString(), "tea_weed");
+            List results = grpcClientService.tea_weed(file);
+            Integer saved_file_database_id = file_databaseService.save(file, results.toString(),results.get(0).toString(), "tea_weed");
             Map result = new HashMap();
             result.put("saved_file_database_id", saved_file_database_id);
             result.put("test_result", results);
@@ -47,8 +48,8 @@ public class TeaWeedController {
     @RequiresRoles("customer")
     public Result bamboo(MultipartFile file) {
         try {
-            Map<String, Float> results = grpcClientService.bamboo(file);
-            Integer saved_file_database_id = file_databaseService.save(file, results.toString(), "bamboo");
+            List results = grpcClientService.bamboo(file);
+            Integer saved_file_database_id = file_databaseService.save(file, results.toString(),results.get(0).toString(), "bamboo");
             Map result = new HashMap();
             result.put("saved_file_database_id", saved_file_database_id);
             result.put("test_result", results);
