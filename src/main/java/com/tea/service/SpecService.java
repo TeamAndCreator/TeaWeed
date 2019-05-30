@@ -14,15 +14,18 @@ import java.util.List;
 public class SpecService {
     @Resource
     private SpecRepository specRepository;
+    //查询所有
     public List findALL(){
         return specRepository.findAll();
     }
+    //保存
     public void save(Spec spec){
        specRepository.save(spec);
 
 
 
     }
+    //单个删除
     public void deleteById(Integer id){
        specRepository.deleteById(id);
 

@@ -28,6 +28,7 @@ public class SpecController {
             return ResultUtil.error(500,e.getMessage());
         }
     }
+    //查询所有
     @GetMapping(value = "findAll")
     public  Result findAll(){
         try {
@@ -39,6 +40,7 @@ public class SpecController {
             return ResultUtil.error(500,e.getMessage());
         }
     }
+    //保存
     @PostMapping(value = "save")
     public Result save(Spec spec){
         try {
@@ -53,6 +55,7 @@ public class SpecController {
 
         }
     }
+    //单个删除
     @DeleteMapping(value = "deleteById")
     public  Result deleteById(Integer id){
         try {
