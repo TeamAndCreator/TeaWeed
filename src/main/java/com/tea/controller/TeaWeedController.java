@@ -30,7 +30,8 @@ public class TeaWeedController {
     public Result tea_weed(MultipartFile file) {
         try {
             List results = grpcClientService.tea_weed(file);
-            Integer saved_file_database_id = file_databaseService.save(file, results.toString(),results.get(0).toString(), "tea_weed");
+            String input_result = results.get(0).toString().replace("{","").replace("}","")+"%";
+            Integer saved_file_database_id = file_databaseService.save(file, results.toString(),input_result, "tea_weed");
             Map result = new HashMap();
             result.put("saved_file_database_id", saved_file_database_id);
             result.put("test_result", results);
@@ -49,7 +50,8 @@ public class TeaWeedController {
     public Result bamboo(MultipartFile file) {
         try {
             List results = grpcClientService.bamboo(file);
-            Integer saved_file_database_id = file_databaseService.save(file, results.toString(),results.get(0).toString(), "bamboo");
+            String input_result = results.get(0).toString().replace("{","").replace("}","")+"%";
+            Integer saved_file_database_id = file_databaseService.save(file, results.toString(),input_result, "bamboo");
             Map result = new HashMap();
             result.put("saved_file_database_id", saved_file_database_id);
             result.put("test_result", results);

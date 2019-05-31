@@ -1,7 +1,7 @@
-#server:
-#  port:
-#    7808
-#---
+server:
+  port:
+    7808
+---
 grpc:
   client:
     tea_weed_server:
@@ -76,7 +76,8 @@ spring:
     timeout: 5000
 ---
 file:
-  root_path : E:/File/
+#  root_path : E:/File/
+  root_path : /home/zhaoliu/zys/File/
 ---
 tea_weed:
   probability : 1
