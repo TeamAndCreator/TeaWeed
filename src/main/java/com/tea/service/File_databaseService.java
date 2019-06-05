@@ -6,6 +6,8 @@ import com.tea.repository.File_databaseRepository;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Transactional
@@ -30,7 +33,7 @@ public class File_databaseService {
     @Value("${file.root_path}")
     private String root_path;
 
-    public Integer save(MultipartFile multipartFile,String test_result ,String type) throws IOException {
+    public Integer save(MultipartFile multipartFile,String test_result ,String input_result,String type) throws IOException {
         /*获取当前用户*/
         Subject current_user = SecurityUtils.getSubject();
         String phone_number = (String) current_user.getSession().getAttribute("username");
@@ -51,13 +54,24 @@ public class File_databaseService {
             file.getParentFile().mkdirs();
         }
         multipartFile.transferTo(new File(path + File.separator + uuid_name));
-        File_database file_database = new File_database(name,uuid_name,path,type,strTime,test_result,user);
+        File_database file_database = new File_database(name,uuid_name,type+"/"+user.getId(),type,strTime,test_result,input_result,user);
         File_database saved_file_database = file_databaseRepository.save(file_database);
         return saved_file_database.getId();
     }
 
     public void update_input_result(Integer id , String input_result){
         file_databaseRepository.update_input_result(id, input_result);
+    }
+
+    public Long findCount(){
+        return file_databaseRepository.count();
+    }
+
+    public List page(Integer start, Integer pageSize){
+        PageRequest pageRequest = PageRequest.of(start,pageSize);
+        Page page = file_databaseRepository.findAll(pageRequest);
+        List file_databases = page.getContent();
+        return file_databases;
     }
 
 }

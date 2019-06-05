@@ -38,13 +38,21 @@ public class File_database {
 
     public File_database(){}
 
-    public File_database(String name,String uuid_name,String path,String type,String time,String test_result,User user){
+    public File_database(String uuid_name,String path,String type,String test_result,String input_result){
+        this.path=path+"/"+uuid_name;
+        this.type=type;
+        this.test_result=test_result;
+        this.input_result=input_result;
+    }
+    
+    public File_database(String name,String uuid_name,String path,String type,String time,String test_result,String input_result,User user){
         this.name=name;
         this.uuid_name=uuid_name;
         this.path=path;
         this.type=type;
         this.time=time;
         this.test_result=test_result;
+        this.input_result=input_result;
         this.user=user;
     }
 

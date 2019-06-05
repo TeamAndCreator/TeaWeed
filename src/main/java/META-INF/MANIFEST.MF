@@ -1,0 +1,61 @@
+Manifest-Version: 1.0
+Class-Path: shiro-crypto-cipher-1.4.0.jar netty-handler-4.1.33.Final.j
+ ar log4j-to-slf4j-2.11.2.jar aspectjweaver-1.9.2.jar spring-boot-star
+ ter-tomcat-2.1.3.RELEASE.jar spring-boot-starter-logging-2.1.3.RELEAS
+ E.jar error_prone_annotations-2.2.0.jar protobuf-java-3.5.1.jar sprin
+ g-boot-autoconfigure-2.1.3.RELEASE.jar shiro-crypto-core-1.4.0.jar sp
+ ring-aspects-5.1.5.RELEASE.jar spring-expression-5.1.5.RELEASE.jar ja
+ vax.persistence-api-2.2.jar spring-core-5.1.5.RELEASE.jar shiro-redis
+ -2.4.2.1-RELEASE.jar spring-jdbc-5.1.5.RELEASE.jar jackson-databind-2
+ .9.8.jar jackson-datatype-jsr310-2.9.8.jar tomcat-embed-el-9.0.16.jar
+  commons-beanutils-1.9.3.jar swagger-annotations-1.5.20.jar javax.tra
+ nsaction-api-1.3.jar netty-codec-socks-4.1.33.Final.jar spring-boot-2
+ .1.3.RELEASE.jar shiro-cache-1.4.0.jar commons-collections-3.2.2.jar 
+ commons-pool2-2.6.1.jar hibernate-commons-annotations-5.0.4.Final.jar
+  log4j-api-2.11.2.jar grpc-core-1.18.0.jar animal-sniffer-annotations
+ -1.17.jar spring-plugin-metadata-1.2.0.RELEASE.jar shiro-core-1.4.0.j
+ ar springfox-swagger2-2.9.2.jar jandex-2.0.5.Final.jar jul-to-slf4j-1
+ .7.25.jar spring-plugin-core-1.2.0.RELEASE.jar jedis-2.9.1.jar spring
+ -context-support-5.1.5.RELEASE.jar springfox-swagger-ui-2.9.2.jar jav
+ ax.annotation-api-1.3.2.jar spring-aop-5.1.5.RELEASE.jar snakeyaml-1.
+ 23.jar opencensus-api-0.18.0.jar netty-codec-4.1.33.Final.jar netty-c
+ ommon-4.1.33.Final.jar grpc-okhttp-1.18.0.jar spring-beans-5.1.5.RELE
+ ASE.jar mapstruct-1.2.0.Final.jar spring-boot-starter-data-jpa-2.0.6.
+ RELEASE.jar spring-boot-starter-2.1.3.RELEASE.jar shiro-spring-1.4.0.
+ jar grpc-stub-1.18.0.jar springfox-core-2.9.2.jar spring-data-redis-2
+ .0.11.RELEASE.jar spring-boot-starter-jdbc-2.1.3.RELEASE.jar byte-bud
+ dy-agent-1.9.10.jar checker-compat-qual-2.5.2.jar google-auth-library
+ -credentials-0.9.0.jar shiro-config-core-1.4.0.jar shiro-lang-1.4.0.j
+ ar hibernate-validator-6.0.14.Final.jar grpc-testing-1.18.0.jar grpc-
+ all-1.18.0.jar grpc-protobuf-lite-1.18.0.jar swagger-models-1.5.20.ja
+ r tomcat-embed-websocket-9.0.16.jar grpc-netty-1.18.0.jar tomcat-embe
+ d-core-9.0.16.jar spring-tx-5.1.5.RELEASE.jar shiro-config-ogdl-1.4.0
+ .jar logback-classic-1.2.3.jar netty-buffer-4.1.33.Final.jar jboss-lo
+ gging-3.3.2.Final.jar springfox-spi-2.9.2.jar javax.activation-api-1.
+ 2.0.jar proto-google-common-protos-1.12.0.jar grpc-protobuf-nano-1.18
+ .0.jar spring-orm-5.1.5.RELEASE.jar spring-data-commons-2.1.5.RELEASE
+ .jar jackson-annotations-2.9.0.jar spring-boot-starter-json-2.1.3.REL
+ EASE.jar gson-2.8.5.jar spring-boot-starter-web-2.1.3.RELEASE.jar gua
+ va-20.0.jar shiro-web-1.4.0.jar slf4j-api-1.7.25.jar objenesis-2.6.ja
+ r mysql-connector-java-8.0.15.jar mockito-core-2.23.4.jar spring-web-
+ 5.1.5.RELEASE.jar shiro-event-1.4.0.jar spring-data-jpa-2.1.5.RELEASE
+ .jar grpc-auth-1.18.0.jar shiro-crypto-hash-1.4.0.jar netty-resolver-
+ 4.1.33.Final.jar spring-jcl-5.1.5.RELEASE.jar spring-context-5.1.5.RE
+ LEASE.jar springfox-swagger-common-2.9.2.jar spring-boot-starter-aop-
+ 2.1.3.RELEASE.jar opencensus-contrib-grpc-metrics-0.18.0.jar classmat
+ e-1.4.0.jar validation-api-2.0.1.Final.jar antlr-2.7.7.jar netty-hand
+ ler-proxy-4.1.33.Final.jar protobuf-javanano-3.0.0-alpha-5.jar jackso
+ n-module-parameter-names-2.9.8.jar dom4j-2.1.1.jar jsr305-3.0.2.jar s
+ pringfox-spring-web-2.9.2.jar logback-core-1.2.3.jar junit-4.12.jar g
+ rpc-client-spring-boot-starter-2.0.1.RELEASE.jar netty-codec-http-4.1
+ .33.Final.jar grpc-client-spring-boot-autoconfigure-2.0.1.RELEASE.jar
+  netty-transport-4.1.33.Final.jar hamcrest-core-1.3.jar javassist-3.2
+ 3.1-GA.jar okio-1.13.0.jar springfox-schema-2.9.2.jar hibernate-core-
+ 5.3.7.Final.jar spring-oxm-5.1.5.RELEASE.jar byte-buddy-1.9.10.jar ja
+ ckson-core-2.9.8.jar fastjson-1.2.8.jar spring-webmvc-5.1.5.RELEASE.j
+ ar HikariCP-3.2.0.jar jackson-datatype-jdk8-2.9.8.jar netty-codec-htt
+ p2-4.1.33.Final.jar grpc-context-1.18.0.jar spring-data-keyvalue-2.1.
+ 5.RELEASE.jar grpc-protobuf-1.18.0.jar jackson-datatype-hibernate4-2.
+ 2.3.jar okhttp-2.5.0.jar
+Main-Class: com.tea.TeaWeedsApplication
+
