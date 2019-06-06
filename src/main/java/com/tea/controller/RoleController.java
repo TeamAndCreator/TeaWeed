@@ -49,7 +49,7 @@ public class RoleController {
     }
 
     @GetMapping(value = "findAll")
-    @RequiresRoles(value = "admin")
+//    @RequiresRoles(value = "admin")
     public Result findAll(){
         try {
             List<Role> roles = roleService.findAll();

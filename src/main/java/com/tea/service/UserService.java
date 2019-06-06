@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -35,8 +36,16 @@ public class UserService {
     public  void deleteById(Integer id){
         userRepository.deleteById(id);
     }
+
     //    @Cacheable(value = "cache01",unless="#result == null",key = "#p0")
     public User findByPhoneNumber(String phoneNumber){
         return userRepository.findByPhoneNumber(phoneNumber);
+    }
+    //批量删除
+    public  void deleteByIds(List<Integer> ids){
+        List<List<Integer>> idList=new ArrayList<>();
+        idList.add(ids);
+        userRepository.deleteUsersByIdIn(ids);
+
     }
 }

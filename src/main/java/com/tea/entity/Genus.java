@@ -6,6 +6,7 @@ import java.util.Set;
 public class Genus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private
     Integer id;
 
@@ -28,8 +29,6 @@ public class Genus {
     /* 描述(无富文本标签) */
     @Column(length = 100000)
     private String genusNotagDesc;
-
-
     public Integer getId() {
         return id;
     }
@@ -37,6 +36,7 @@ public class Genus {
     public void setId(Integer id) {
         this.id = id;
     }
+
 
     public String getGenusNameCh() {
         return genusNameCh;

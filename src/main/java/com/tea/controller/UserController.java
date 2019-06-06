@@ -16,6 +16,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -125,5 +126,29 @@ public class UserController {
         }
 
 
+    }
+    //    //批量删除
+    @Transactional
+    @DeleteMapping(value = "deleteByIds")
+    public  Result deleteByIds(@ApiParam(name = "ids", value = "需删除属的id数组", required = true) @RequestParam(value ="ids")List<Integer> ids){
+        try {
+            userService.deleteByIds(ids);
+            return ResultUtil.success();
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+        }
+
+    }
+    @PostMapping(value = "save")
+    public Result save(User user){
+        try {
+            userService.save(user);
+            return ResultUtil.success();
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+
+        }
     }
 }

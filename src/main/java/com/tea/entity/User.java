@@ -19,7 +19,10 @@ public class User {
 
     /*密码*/
     private String password;
-
+    /*密码*/
+    private  String account;
+    /*姓名*/
+private  String username;
     /*创建时间*/
     private String createTime;
 
@@ -77,6 +80,22 @@ public class User {
         this.roles = roles;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -85,6 +104,8 @@ public class User {
                 ", password='" + password + '\'' +
                 ", createTime='" + createTime + '\'' +
                 ", active=" + active +
+                ", username=" + username +
+                ", account=" + account +
                 ", roles=" + roles +
                 '}';
     }
