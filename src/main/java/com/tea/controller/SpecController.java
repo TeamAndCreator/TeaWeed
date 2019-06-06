@@ -9,10 +9,14 @@ import com.tea.service.SpecService;
 import com.tea.util.ResultUtil;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping(value = "spec")
@@ -72,9 +76,10 @@ public class SpecController {
     }
     //查询
     @GetMapping(value = "findById")
-    public Result findById(Integer id){
+    public Result findById(Integer id, MultipartFile[] multipartFiles){
         try {
             Spec spec=specService.findById(id);
+
             return ResultUtil.success(spec);
         }catch (Exception e){
             e.printStackTrace();
