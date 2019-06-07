@@ -9,5 +9,7 @@ import java.util.List;
 
 public interface SpecRepository extends JpaRepository<Spec,Integer>, JpaSpecificationExecutor<Spec> {
     void deleteSpecByIdIn(List<Integer> ids);
+
+    List<Spec> findByGenus(Genus genus);
 }
 
