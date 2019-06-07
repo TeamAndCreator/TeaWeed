@@ -50,4 +50,8 @@ public class SpecService {
 
 
     }
+
+    public List findByGenusId(Integer id){
+        return specRepository.findByGenus(new Genus(id));
+    }
 }

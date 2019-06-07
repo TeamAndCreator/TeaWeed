@@ -29,6 +29,13 @@ public class Genus {
     /* 描述(无富文本标签) */
     @Column(length = 100000)
     private String genusNotagDesc;
+
+    public Genus(){};
+
+    public Genus(Integer id){
+        this.id=id;
+    };
+
     public Integer getId() {
         return id;
     }

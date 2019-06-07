@@ -101,4 +101,15 @@ public class SpecController {
 
     }
 
+    @GetMapping(value = "findByGenusId")
+    public Result findByGenusId(Integer genusId){
+        try {
+            List spec_list = specService.findByGenusId(genusId);
+            return ResultUtil.success(spec_list);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+        }
+    }
+
 }
