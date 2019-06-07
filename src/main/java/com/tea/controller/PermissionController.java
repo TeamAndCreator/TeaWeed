@@ -22,7 +22,7 @@ public class PermissionController {
     private PermissionService permissionService;
 
     @PostMapping(value = "save")
-    @RequiresRoles(value = "admin")
+    //@RequiresRoles(value = "admin")
     public Result save(Permission permission){
         try {
             permissionService.save(permission);
@@ -33,7 +33,7 @@ public class PermissionController {
     }
 
     @GetMapping(value = "findAll")
-    @RequiresRoles(value = "admin")
+   //@RequiresRoles(value = "admin")
     public Result findAll(){
         try {
             List<Permission> permissions = permissionService.findAll();
