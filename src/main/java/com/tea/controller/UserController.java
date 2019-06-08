@@ -10,8 +10,10 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.subject.Subject;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.*;
 
@@ -149,6 +151,19 @@ public class UserController {
             e.printStackTrace();
             return ResultUtil.error(500,e.getMessage());
 
+        }
+    }
+
+    @GetMapping(value = "findUser")
+    public Result findUser(){
+        try {
+            Subject currentUser = SecurityUtils.getSubject();
+            String phone_number = (String) currentUser.getSession().getAttribute("username");
+            User user = userService.findByPhoneNumber(phone_number);
+            return ResultUtil.success(user);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
         }
     }
 }

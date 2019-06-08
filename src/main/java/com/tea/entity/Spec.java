@@ -60,6 +60,14 @@ public class Spec {
     /* 时间 */
     private String addTime;
 
+    public Spec(){}
+
+    public Spec(Integer id,String specNameCh,String specImgs){
+        this.id = id;
+        this.specNameCh=specNameCh;
+        this.specImgs=specImgs;
+    }
+
     public Integer getId() {
         return id;
     }
