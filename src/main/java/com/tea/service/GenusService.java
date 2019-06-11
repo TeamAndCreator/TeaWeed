@@ -13,6 +13,7 @@ import java.util.Optional;
 public class GenusService {
     @Resource
     private GenusRepository genusRepository;
+
     public List findAll(){
 
         return genusRepository.findAll();
