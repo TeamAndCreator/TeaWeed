@@ -15,6 +15,7 @@ public class StaticMvcConfig extends WebMvcConfigurerAdapter {
         String ROOT_PATH = "E:/File/";
         ROOT_PATH = getString(ROOT_PATH);
         registry.addResourceHandler("/file/**").addResourceLocations("file:"+ROOT_PATH);
+        registry.addResourceHandler("/page/**").addResourceLocations("file:E:\\WorkSpace\\tea_weed_pc\\");
         super.addResourceHandlers(registry);
     }
 

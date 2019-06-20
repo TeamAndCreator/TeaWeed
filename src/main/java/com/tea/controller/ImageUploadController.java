@@ -43,7 +43,7 @@ public class ImageUploadController {
     }
 
     @PutMapping(value = "update_input_result")
-    @RequiresRoles("customer")
+//    @RequiresRoles("customer")
     public Result update_input_result(Integer id, String input_result){
         try {
             file_databaseService.update_input_result(id, input_result);
