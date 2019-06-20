@@ -1,13 +1,12 @@
 package com.tea.controller;
 
-import com.tea.entity.Permission;
-import com.tea.entity.Result;
-import com.tea.entity.Role;
+import com.tea.entity.*;
 import com.tea.service.PermissionService;
 import com.tea.service.RoleService;
 import com.tea.util.ResultUtil;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.HashSet;
@@ -55,6 +54,30 @@ public class RoleController {
             return ResultUtil.error(500,e.getMessage());
         }
     }
+    //查询
+    @GetMapping(value = "findById")
+    public Result findById(Integer id, MultipartFile[] multipartFiles){
+        try {
+           Role role=roleService.findById(id);
+
+            return ResultUtil.success(role);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+        }
+
+    }
+/*    @PostMapping(value = "save")
+    public Result save(Role role){
+        try {
+           roleService.save(role);
+            return ResultUtil.success();
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(500,e.getMessage());
+
+        }
+    }*/
 
 
 }

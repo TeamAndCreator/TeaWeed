@@ -1,7 +1,7 @@
 package com.tea.entity;
 
 import javax.persistence.*;
-import java.util.Set;
+
 @Entity
 public class Genus {
     @Id
@@ -9,6 +9,10 @@ public class Genus {
 
     private
     Integer id;
+    /* 科标识 */
+    @ManyToOne
+    @JoinColumn(name = "section_id")
+    private Section section;
 
     /* 中文名称 */
     private String genusNameCh;
@@ -93,10 +97,19 @@ public class Genus {
         this.genusNotagDesc = genusNotagDesc;
     }
 
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
+    }
+
     @Override
     public String toString() {
         return "Genus{" +
                 "id=" + id +
+                ", section=" + section +
                 ", genusNameCh='" + genusNameCh + '\'' +
                 ", genusNameEn='" + genusNameEn + '\'' +
                 ", genusNameLd='" + genusNameLd + '\'' +
